@@ -136,7 +136,7 @@ func consumeScratchNetConf(containerID, dataDir string) ([]byte, error) {
 func getifname() (f func() string) {
 	var interfaceIndex int
 	f = func() string {
-		ifname := fmt.Sprintf("net%d", interfaceIndex)
+		ifname := fmt.Sprintf("eth%d", (interfaceIndex+1))
 		interfaceIndex++
 		return ifname
 	}
